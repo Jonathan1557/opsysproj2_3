@@ -47,3 +47,6 @@ int getWeight(void);
 
 //Returns number of passengers held by elevator
 int getCapacity(void);
+
+// returns weight of all passengers waiting on a given floor
+int getWaitingLoad(int floor);
