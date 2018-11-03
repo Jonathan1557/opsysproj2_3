@@ -5,10 +5,7 @@
 #include <linux/time.h>
 #include "elevator.h"
 
-#define ENTRY_NAME "elevator"
-#define PERMS 0644
 #define PARENT NULL
-static struct file_operations fops;
 
 static char * message;
 static char * movestate;
@@ -125,53 +122,53 @@ ssize_t elevator_proc_read(struct file *sp_file, char __user *buf, size_t size, 
 
 
 		strcat(message, "Floor 1 Total serviced: ");
-		sprintf(floor1t, "%d", serviced[0] );		// putting total serviced into their strings for output in proc file
+		sprintf(floor1t, "%d", serviced(0) );		// putting total serviced into their strings for output in proc file
 		strcat(message,floor1t);
 		strcat(message,"\n");
 
 		strcat(message, "Floor 2 Total serviced: ");
-                sprintf(floor2t, "%d", serviced[1] );           // putting total serviced into their strings for output in proc file
+                sprintf(floor2t, "%d", serviced(1) );           // putting total serviced into their strings for output in proc file
                 strcat(message,floor2t);
                 strcat(message,"\n");
 
 		strcat(message, "Floor 3 Total serviced: ");
-                sprintf(floor3t, "%d", serviced[2] );           // putting total serviced into their strings for output in proc file
+                sprintf(floor3t, "%d", serviced(2) );           // putting total serviced into their strings for output in proc file
                 strcat(message,floor3t);
                 strcat(message,"\n");
 
 		strcat(message, "Floor 4 Total serviced: ");
-                sprintf(floor4t, "%d", serviced[3] );           // putting total serviced into their strings for output in proc file
+                sprintf(floor4t, "%d", serviced(3) );           // putting total serviced into their strings for output in proc file
                 strcat(message,floor4t);
                 strcat(message,"\n");
 
 		strcat(message, "Floor 5 Total serviced: ");
-                sprintf(floor5t, "%d", serviced[4] );           // putting total serviced into their strings for output in proc file
+                sprintf(floor5t, "%d", serviced(4) );           // putting total serviced into their strings for output in proc file
                 strcat(message,floor5t);
                 strcat(message,"\n");
 
 		strcat(message, "Floor 6 Total serviced: ");
-                sprintf(floor6t, "%d", serviced[5] );           // putting total serviced into their strings for output in proc file
+                sprintf(floor6t, "%d", serviced(5) );           // putting total serviced into their strings for output in proc file
                 strcat(message,floor6t);
                 strcat(message,"\n");
 
 		strcat(message, "Floor 7 Total serviced: ");
-                sprintf(floor7t, "%d", serviced[6] );           // putting total serviced into their strings for output in proc file
+                sprintf(floor7t, "%d", serviced(6) );           // putting total serviced into their strings for output in proc file
                 strcat(message,floor7t);
                 strcat(message,"\n");
 
 		strcat(message, "Floor 8 Total serviced: ");
-                sprintf(floor8t, "%d", serviced[7] );           // putting total serviced into their strings for output in proc file
+                sprintf(floor8t, "%d", serviced(7) );           // putting total serviced into their strings for output in proc file
                 strcat(message,floor8t);
                 strcat(message,"\n");
 
 
 		strcat(message, "Floor 9 Total serviced: ");
-                sprintf(floor9t, "%d", serviced[8] );           // putting total serviced into their strings for output in proc file
+                sprintf(floor9t, "%d", serviced(8) );           // putting total serviced into their strings for output in proc file
                 strcat(message,floor9t);
                 strcat(message,"\n");
 
 		strcat(message, "Floor 10 Total serviced: ");
-                sprintf(floor10t, "%d", serviced[9] );           // putting total serviced into their strings for output in proc file
+                sprintf(floor10t, "%d", serviced(9) );           // putting total serviced into their strings for output in proc file
                 strcat(message,floor10t);
                 strcat(message,"\n");
 

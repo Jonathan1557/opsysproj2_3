@@ -1,5 +1,8 @@
 #include <linux/init.h>
+#include <linux/proc_fs.h>
 #include "elevator.h"
+
+static struct file_operations fops;
 
 static int elevator_init(void)
 {

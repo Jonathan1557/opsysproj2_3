@@ -1,11 +1,11 @@
 #include "elevator.h"
 
-struct Passenger checkWaiter(int floor)
+struct Passenger* checkWaiter(int floor)
 {
   return NULL;
 }
 
-struct Passenger loadWaiter(int floor)
+struct Passenger* loadWaiter(int floor)
 {
   return NULL;
 }
