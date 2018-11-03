@@ -4,17 +4,21 @@ COP4610 Project 1, part 3
 Division of Labor:
 
 Chris Oserer:
+
 	Creation of Proc File
 
 Jonathan Molina:
+
 	Manage storage of passengers on floors
 	Create syscall to add passengers to floors
 
 Steven Perez:
+
 	Build Scheduler for elevator
 	Wrote Makefile and Syscall Wrapper
 
 To Do:
+
 	Still need passenger storage
 	Still need elevator scheduler
 	Still need to add syscalls
