@@ -1,14 +1,9 @@
-#include <linux/init.h>
-#include <linux/module.h>
 #include <linux/proc_fs.h>
 #include <linux/slab.h>
 #include <linux/string.h>
 #include <linux/uaccess.h>
 #include <linux/time.h>
 #include "elevator.h"
-
-MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("Displays Information regarding the elevator status, along with status of passengers and the floor");
 
 #define ENTRY_NAME "elevator"
 #define PERMS 0644
@@ -269,29 +264,3 @@ int elevator_proc_release(struct inode *sp_inode, struct file *sp_file)
 	kfree(message);
 	return 0;
 }
-
-static int elevator_init(void)
-{
-	printk(KERN_NOTICE "/proc/%s create\n", ENTRY_NAME);
-	fops.open = elevator_proc_open;
-	fops.read = elevator_proc_read;
-	fops.release = elevator_proc_release;
-
-	if (!proc_create(ENTRY_NAME, PERMS, NULL, &fops))
-	 {
-		printk("ERROR! proc_create\n");
-		remove_proc_entry(ENTRY_NAME, NULL);
-		return -ENOMEM;
-	 }
-	 return 0;
-}
-
-module_init(elevator_init);
-
-static void elevator_exit(void)
-{
-	remove_proc_entry(ENTRY_NAME, NULL);
-	printk(KERN_NOTICE "Removing /proc/%s.\n", ENTRY_NAME);
-}
-
-module_exit(elevator_exit);

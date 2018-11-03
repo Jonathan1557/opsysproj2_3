@@ -1,4 +1,6 @@
 obj-y := elevatorCalls.o
+obj-m := elevatorSim.o
+elevatorSim-y := elevator.o init.o eleproc.o floor.o
 
 PWD := $(shell pwd)
 KDIR := /lib/modules/`uname -r`/build

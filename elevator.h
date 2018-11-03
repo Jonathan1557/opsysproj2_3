@@ -1,5 +1,8 @@
 #include <linux/module.h>
 MODULE_LICENSE("Dual BSD/GPL");
+MODULE_DESCRIPTION("Simulates Elevator and adds system calls and proc file for interacting with and accessing information about simulation");
+
+
 
 //Basic struct to store data on a passenger
 struct Passenger{
@@ -34,24 +37,19 @@ struct Passenger loadWaiter(int floor);
 int numPassengers(int floor);
 
 //Returns current state of elevator
-enum ElevatorState getState(void)
-{return OFFLINE;}
+enum ElevatorState getState(void);
 
 //Returns current floor of elevator
-int getFloor(void)
-{return 1;}
+int getFloor(void);
 
 //Returns current destination of elevator
-int getDest(void)
-{return 1;}
+int getDest(void);
 
 //Returns current weight held by elevator
-int getWeight(void)
-{return 123;}
+int getWeight(void);
 
 //Returns number of passengers held by elevator
 int getCapacity(void);
 
 // returns weight of all passengers waiting ona given floor
-int getWaitingLoad(int floor)
-{return 321;}
+int getWaitingLoad(int floor);
